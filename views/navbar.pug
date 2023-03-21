@@ -1,0 +1,29 @@
+header.header
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+    nav.navbar
+        a.nav-logo(href='/')
+            image(src="/images/geh-mit-uns-logo-v1.svg")
+        ul.nav-menu
+            li.nav-item
+                a.nav-link(href='/ihave')
+                    button.button-nav.button-nav-have(role='button') Ich habe
+            li.nav-item
+                a.nav-link(href='/isearch')
+                    button.button-nav.button-nav-search(role='button') Ich suche
+            li.nav-item
+                a.nav-link(href='/about')
+                    button.button-nav.button-nav-about(role='button') About
+        .hamburger
+            span.bar
+            span.bar
+            span.bar
+script.
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        }

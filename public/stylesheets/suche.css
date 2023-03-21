@@ -1,0 +1,10 @@
+.card{box-shadow: #783604 10px 10px;}
+.card-image {
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 55%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/42/Ios-search.svg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}

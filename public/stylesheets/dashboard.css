@@ -1,0 +1,87 @@
+.entry-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.entry-table-row{
+
+    outline: thin solid greenyellow;
+}
+.entry-table-td{
+    height:250px;text-align:center; vertical-align:middle;
+}
+
+.entry-image{
+    max-height:100%;
+}
+.entry-table-button{
+    text-align: right;
+    padding-right: 200px;
+}
+.table-item-kontakt{
+    text-align: center;
+}
+
+.button-52 {
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-52:after {
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.button-52:hover:after {
+    top: 0;
+    left: 0;
+}
+
+@media (min-width: 768px) {
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
+}
+
+.button-accept:after{
+    background-color: green;
+}
+.button-delete:after{
+     background-color: red;
+ }
+
+.btn {
+    border: 5px solid;
+    border-image-slice: 1;
+    background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    border-image-source:  linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+    text-decoration: none;
+    transition: all .4s ease;
+}
+
+.btn:hover, .btn:focus {
+    background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+    -webkit-background-clip: none !important;
+    -webkit-text-fill-color: #fff !important;
+    border: 5px solid #fff !important;
+    box-shadow: #222 1px 0 10px;
+    text-decoration: underline;
+}

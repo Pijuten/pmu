@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        title="login"
+        style
+            include ../public/stylesheets/navbar.css
+            include ../public/stylesheets/head.css
+            include ../public/stylesheets/login.css
+
+body
+    include navbar
+main
+    block content
+        form(action='/login', method='POST')
+            p
+                input.login-input(type='text', name='username',placeholder='username', value='')
+                br
+                br
+                input.login-input(type='text', name='password',placeholder='password', value='')
+            input(type='submit', value='Submit')

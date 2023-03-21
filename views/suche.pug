@@ -1,0 +1,60 @@
+- var authorised = false
+doctype html
+html
+    head
+        title="Habe"
+        style
+            include ../public/stylesheets/navbar.css
+            include ../public/stylesheets/head.css
+            include ../public/stylesheets/suche.css
+            include ../public/stylesheets/formNav.css
+            include ../public/stylesheets/bootstrap/bootstrap.css
+body
+    include navbar
+main
+    .container
+        .card
+            .card-image
+            form.card-form(method='POST' action='/isearch')
+                .input
+                    input.input-field(type='text' name="usname" required='')
+                    label.input-label Name*
+                .input
+                    input.input-field(type='text' name="kontakt" required='')
+                    label.input-label Email/Telefonnummer*
+                .hiddenArea(id="more")
+                    .input
+                        input.input-field(type='text' name="titel" required='')
+                        label.input-label Titel
+                    .input
+                        textarea.input-field.input-area(name="beschreibung" maxlength=400 rows=3)
+                        label.input-label Beschreibung
+                    .action
+                        button.action-button(name="submit" type='submit') Absenden
+                    .card-info
+                        p
+                            | By signing up you are agreeing to our
+                            a(href='#') Terms and Conditions
+        .row
+            .col-lg-10.mx-auto
+                // List group
+                ul.list-group.shadow
+                    // list group item
+                    each  i in json
+                        -var img = './uploads/'+i.image
+                        a(href="/post/"+i.id)
+                            li.list-group-item
+                                // Custom content
+                                .media.align-items-lg-center.flex-column.flex-lg-row.p-3
+                                    .media-body.order-2.order-lg-1
+                                        h5.mt-0.font-weight-bold.mb-2= i.title
+                                        p.font-italic.text-muted.mb-0.small
+                                        = i.kontakt
+                                    img.ml-lg-5.order-1.order-lg-2.img-fluid.image-post(src=img onerror="this.onerror=null; this.src='./images/600x400.svg'" width='200')
+                                // End
+                            // End
+
+
+    script(src="/javascripts/read-more-text.js")
+    script.
+        const readMore = new ReadMore('#more');

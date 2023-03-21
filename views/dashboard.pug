@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title= "dashboard"
+        style
+            include ../public/stylesheets/navbar.css
+            include ../public/stylesheets/head.css
+            include ../public/stylesheets/dashboard.css
+            include ../public/stylesheets/bootstrap/bootstrap.css
+body
+    include navbar
+main
+    if loggedIn
+    h1= "Nicht Akzeptierte Anfragen"
+    .container.mx-auto.mt-4
+        .row
+            each  i in json
+                -var img = './uploads/'+i.image
+                .col-md-4
+                      .card(style='width: 18rem;')
+                        img.card-img-top(src=img onerror="this.onerror=null; this.src='./images/600x400.svg'")
+                        .card-body
+                          h5.card-title= i.title
+                          h6.card-subtitle.mb-2.text-muted= i.kontakt
+                          p.card-text= i.beschreibung
+                          a.btn.mr-2(href='/post/accept/'+i.id)
+                            i.fas.fa-link
+                            |  Akzeptieren
+                          a.btn(role='button')
+                            i.fab.fa-github
+                            |  Löschen

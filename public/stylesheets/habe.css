@@ -1,0 +1,13 @@
+.card{box-shadow: #e86c14 10px 10px}
+.card-image {
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 55%;
+    background-image: url('https://freesvg.org/img/1550874214.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
+.filled{
+    background: rgba(6, 78, 59, 1) !important;
+}

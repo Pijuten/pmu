@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title="login"
+        style
+            include ../public/stylesheets/navbar.css
+            include ../public/stylesheets/head.css
+            include ../public/stylesheets/post.css
+            include ../public/stylesheets/bootstrap/bootstrap.css
+
+body
+    include navbar
+main
+
+    -var img = '/uploads/' + json[0]['image']
+    .d-flex.justify-content-center
+        .card.card-post(style='width: 30rem;')
+            img.card-img-top(src=img onerror="this.onerror=null; this.src='./images/600x400.svg'" width='200')
+            .card-body
+                h5.card-title=json[0]['title']
+                p.card-text=json[0]['kontakt']
+                p.card-text=json[0]['beschreibung']
